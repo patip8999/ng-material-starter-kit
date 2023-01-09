@@ -90,12 +90,12 @@ export class FormAutocompleteMultiCarsComponent {
       this._carsService.getAllComfortFeatures(),
     ]).pipe(
       map(([searchForm, comfortFeatures]) =>
-        comfortFeatures.filter((comfortFeatures) =>
-          comfortFeatures.name
+        comfortFeatures.filter((comfortFeature) =>
+          comfortFeature.name
             .toLowerCase()
             .includes(
-              searchForm.comfortFeatures
-                ? searchForm.comfortFeatures.toLowerCase()
+              searchForm.comfortFeature
+                ? searchForm.comfortFeature.toLowerCase()
                 : ''
             )
         )
