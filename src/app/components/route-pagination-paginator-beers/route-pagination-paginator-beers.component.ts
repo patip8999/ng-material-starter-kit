@@ -23,36 +23,22 @@ interface PaginatorData {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoutePaginationPaginatorBeersComponent {
-  readonly paginatorData$: Observable<PaginatorData> =
+  readonly paginatorParams$: Observable<{ pageIndex: number; perPage: number; length: number; pageOptions: number[] }> =
     this._activatedRoute.queryParams.pipe(
       map((params) => ({
-        pageNumber: params['pageNumber']
-          ? Math.max(1, +params['pageNumber'])
-          : 1,
-        pageSize: params['pageSize'] ? Math.max(5 + params['pageSize']) : 5,
-        pageSizeOptions: [5, 10, 15],
-      })),
-      shareReplay(1)
+        pageIndex: params['page'] ? params['page'] - 1 : 0,
+        perPage: params['per_page'] ? params['per_page'] : 5,
+        length: 100,
+        pageOptions: [5, 10, 15]
+      }))
     );
-  readonly beers$: Observable<BeerModel[]> = this.paginatorData$.pipe(
-    switchMap((data) =>
-      this._beersService.getAll(data.pageNumber, data.pageSize)
-    )
+  readonly beerList$: Observable<BeerModel[]> = this.paginatorParams$.pipe(
+    switchMap((data) => this._beersService.getAllPagination(data.pageIndex + 1, data.perPage))
   );
 
-  constructor(
-    private _activatedRoute: ActivatedRoute,
-    private _beersService: BeersService,
-    private _router: Router
-  ) {}
+  constructor(private _activatedRoute: ActivatedRoute, private _beersService: BeersService, private _router: Router) {}
 
-  onPageChanged(event: {pageIndex: number, pageSize: number}) : void {
-    this._router.navigate([], {
-      queryParams: {
-        pageNumber: event.pageIndex +1,
-        pageSize: event.pageSize
-      },
-    });
-    
+  onPageEvent(event: { pageIndex: number; pageSize: number }): void {
+    this._router.navigate([], { queryParams: { page: event.pageIndex + 1, per_page: event.pageSize } });
   }
 }
