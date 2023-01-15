@@ -1,21 +1,44 @@
-<mat-card *ngIf="queryParams$|async as params">
-    <mat-card-title>Show cities</mat-card-title>
-    <label>Choose a page</label>
-    <mat-selection-list role="list" fxLayout="row" [multiple]="false">
-        <mat-list-option role="listoption" *ngFor="let item of pages$ | async" [value]="item" [selected]="item==params.pageNumber"
-            [routerLink]="[]" [queryParams]="{pageNumber: item, pageSize: params.pageSize}">
-            {{item}}
-        </mat-list-option>
-    </mat-selection-list>
-    <label>Choose limit per page</label>
-    <mat-selection-list role="list" fxLayout="row" [multiple]="false">
-        <mat-list-option role="listoption" *ngFor="let item of limitOpts$ | async" [value]="item" [selected]="item==params.pageSize"
-            (selectedChange)="onPageSelected($event,item)">
-            {{item}}
-        </mat-list-option>
-    </mat-selection-list>
-    <mat-card-content>
-        <mat-list role="list"><mat-list-item role="listitem"
-                *ngFor="let item of cityListPaginated$ | async">{{item.name}}</mat-list-item></mat-list>
-    </mat-card-content>
+<mat-card *ngIf="queryParams$ | async as params">
+  <mat-card-title>Show cities</mat-card-title>
+  <div>
+  <label>Select Page</label>
+  <br>
+  <mat-selection-list role="list" fxLayout="row" [multiple]="false"  style="display: inline-flex">
+   
+    <mat-list-option
+      role="listoption"
+      *ngFor="let item of pages$ | async"
+      [value]="item"
+      [selected]="item == params.pageNumber"
+      [routerLink]="[]"
+      [queryParams]="{ pageNumber: item, pageSize: params.pageSize }"
+    >
+      {{ item }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<div>
+  <label>Select item per page</label>
+  <br>
+  <mat-selection-list role="list" fxLayout="row" [multiple]="false"  style="display: inline-flex">
+    <mat-list-option
+      role="listoption"
+      *ngFor="let item of limitOpts$ | async"
+      [value]="item"
+      [selected]="item == params.pageSize"
+      (selectedChange)="onPageSelected($event, item)"
+    >
+      {{ item }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+  <mat-card-content>
+    <mat-list role="list"
+      ><mat-list-item
+        role="listitem"
+        *ngFor="let item of cityListPaginated$ | async"
+        >{{ item.name }}</mat-list-item
+      ></mat-list
+    >
+  </mat-card-content>
 </mat-card>
