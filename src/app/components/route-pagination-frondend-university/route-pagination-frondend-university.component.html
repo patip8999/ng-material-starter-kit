@@ -1,5 +1,5 @@
 <mat-card *ngIf="queryParams$ | async as params">
-  <mat-card-title>Show cities</mat-card-title>
+  <mat-card-title>Show Universities</mat-card-title>
   <div>
     <label>Select Page</label>
     <br />
@@ -16,9 +16,8 @@
         [selected]="item == params.pageNumber"
         [routerLink]="[]"
         [queryParams]="{ pageNumber: item, pageSize: params.pageSize }"
+        >{{ item }}</mat-list-option
       >
-        {{ item }}
-      </mat-list-option>
     </mat-selection-list>
   </div>
   <div>
@@ -31,21 +30,20 @@
       style="display: inline-flex"
     >
       <mat-list-option
-        role="listoption"
-        *ngFor="let item of limitOpts$ | async"
+        role="listitem"
+        *ngFor="let item of limitOptions$ | async"
         [value]="item"
         [selected]="item == params.pageSize"
-        (selectedChange)="onPageSelected($event, item)"
-      >
-        {{ item }}
-      </mat-list-option>
-    </mat-selection-list>
+        (selectedChange)="OnPageSelected($event, item)"
+        >{{ item }}</mat-list-option
+      ></mat-selection-list
+    >
   </div>
   <mat-card-content>
     <mat-list role="list"
       ><mat-list-item
         role="listitem"
-        *ngFor="let item of cityListPaginated$ | async"
+        *ngFor="let item of UniversityListPaginated$ | async"
         >{{ item.name }}</mat-list-item
       ></mat-list
     >

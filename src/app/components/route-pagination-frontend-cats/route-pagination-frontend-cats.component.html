@@ -1,0 +1,52 @@
+<mat-card *ngIf="queryParams$ | async as params">
+  <mat-card-title>Show cats</mat-card-title>
+  <div>
+  <label>Select Page</label>
+  <br />
+  <mat-selection-list
+    role="list"
+    fxLayout="row"
+    [multiple]="false"
+    style="display: inline-flex"
+    ><mat-list-option
+      role="lisoption"
+      *ngFor="let item of pages$ | async"
+      [value]="item"
+      [selected]="item == params.pageNumber"
+      [routerLink]="[]"
+      [queryParams]="{ pageNumber: item, pageSize: params.pageSize }"
+      >{{ item }}</mat-list-option
+    ></mat-selection-list
+  >
+</div>
+<div>
+  <label>Select item per page</label>
+  <br />
+  <mat-selection-list
+    role="list"
+    fxLayout="row"
+    [multiple]="false"
+    style="display: inline-flex"
+  >
+    <mat-list-option
+      role="lisoption"
+      *ngFor="let item of limitOptions$ | async"
+      [value]="item"
+      [selected]="item == params.pageSize"
+      (selectedChange)="OnPageSelected($event, item)"
+      >{{ item }}</mat-list-option
+    ></mat-selection-list
+  >
+</div>
+  <mat-card
+    ><mat-card-content>
+      <mat-list role="list"
+        ><mat-list-item
+          role="listitem"
+          *ngFor="let item of catsListPaginated$ | async"
+          >{{ item.breed }}</mat-list-item
+        ></mat-list
+      >
+    </mat-card-content></mat-card
+  >
+
