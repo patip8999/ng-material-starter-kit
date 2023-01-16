@@ -9,6 +9,11 @@ import { RoutePaginationCustomBeersComponent } from './components/route-paginati
 import { RoutePaginationFrontendCountriesComponent } from './components/route-pagination-frontend-countries/route-pagination-frontend-countries.component';
 import { RoutePaginationFrontendCatsComponent } from './components/route-pagination-frontend-cats/route-pagination-frontend-cats.component';
 import { RoutePaginationFrondendUniversityComponent } from './components/route-pagination-frondend-university/route-pagination-frondend-university.component';
+import { RoutePaginationFrondendBeersComponent } from './components/route-pagination-frondend-beers/route-pagination-frondend-beers.component';
+import { RouteSortSingleProductsBackendComponent } from './components/route-sort-single-products-backend/route-sort-single-products-backend.component';
+import { SearchRouteMultiJobsComponent } from './components/search-route-multi-jobs/search-route-multi-jobs.component';
+import { RouteFilterSingleProductsBackendComponent } from './components/route-filter-single-products-backend/route-filter-single-products-backend.component';
+import { RouteFilterMultiCardsFrondendComponent } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -18,6 +23,11 @@ import { RoutePaginationCustomBeersComponentModule } from './components/route-pa
 import { RoutePaginationFrontendCountriesComponentModule } from './components/route-pagination-frontend-countries/route-pagination-frontend-countries.component-module';
 import { RoutePaginationFrontendCatsComponentModule } from './components/route-pagination-frontend-cats/route-pagination-frontend-cats.component-module';
 import { RoutePaginationFrondendUniversityComponentModule } from './components/route-pagination-frondend-university/route-pagination-frondend-university.component-module';
+import { RoutePaginationFrondendBeersComponentModule } from './components/route-pagination-frondend-beers/route-pagination-frondend-beers.component-module';
+import { RouteSortSingleProductsBackendComponentModule } from './components/route-sort-single-products-backend/route-sort-single-products-backend.component-module';
+import { SearchRouteMultiJobsComponentModule } from './components/search-route-multi-jobs/search-route-multi-jobs.component-module';
+import { RouteFilterSingleProductsBackendComponentModule } from './components/route-filter-single-products-backend/route-filter-single-products-backend.component-module';
+import { RouteFilterMultiCardsFrondendComponentModule } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component-module';
 
 @NgModule({
   imports: [
@@ -30,7 +40,12 @@ import { RoutePaginationFrondendUniversityComponentModule } from './components/r
       { path: 'route-pagination-custom-beers', component: RoutePaginationCustomBeersComponent },
       { path: 'router-pagination-frondend-countries', component: RoutePaginationFrontendCountriesComponent },
       { path: 'route-pagination-frontend-cats', component: RoutePaginationFrontendCatsComponent },
-      { path: 'route-pagination-frondend-university', component: RoutePaginationFrondendUniversityComponent }
+      { path: 'route-pagination-frondend-university', component: RoutePaginationFrondendUniversityComponent },
+      { path: 'route-pagination-frondend-beers', component: RoutePaginationFrondendBeersComponent },
+      { path: 'route-sort-single-products-backend', component: RouteSortSingleProductsBackendComponent },
+      { path: 'search-route-multi-jobs', component: SearchRouteMultiJobsComponent },
+      { path: 'products/:category', component: RouteFilterSingleProductsBackendComponent },
+      { path: 'list-2-route-filter-multi-cars-frondend', component: RouteFilterMultiCardsFrondendComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -40,7 +55,12 @@ import { RoutePaginationFrondendUniversityComponentModule } from './components/r
     RoutePaginationCustomBeersComponentModule,
     RoutePaginationFrontendCountriesComponentModule,
     RoutePaginationFrontendCatsComponentModule,
-    RoutePaginationFrondendUniversityComponentModule
+    RoutePaginationFrondendUniversityComponentModule,
+    RoutePaginationFrondendBeersComponentModule,
+    RouteSortSingleProductsBackendComponentModule,
+    SearchRouteMultiJobsComponentModule,
+    RouteFilterSingleProductsBackendComponentModule,
+    RouteFilterMultiCardsFrondendComponentModule
   ],
   exports: [RouterModule],
 })

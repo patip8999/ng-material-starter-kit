@@ -12,7 +12,7 @@ export class BeersService {
     return this._httpClient.get<BeerModel[]>(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${limit}`);
   }
 
-  getAll(index: number, size: number): Observable<BeerModel[]> {
-    return this._httpClient.get<BeerModel[]>(`https://api.punkapi.com/v2/beers?page=${index}&per_page=${size}`);
+  getAll(): Observable<BeerModel[]> {
+    return this._httpClient.get<BeerModel[]>('https://api.punkapi.com/v2/beers')
   }
 }
