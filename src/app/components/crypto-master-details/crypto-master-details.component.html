@@ -1,0 +1,34 @@
+<mat-card-title>Crypto Chips</mat-card-title>
+<div class="container">
+  <mat-grid-list cols="2" rowHeight="1:2">
+    <mat-grid-tile>
+      <mat-list role="list" *ngIf="list$ | async as list; else loading">
+        <ng-container *ngIf="list.length > 0; else emptyState">
+          <mat-list-item role="listitem" *ngFor="let item of list$ | async"
+            >{{ item.symbol }}
+            <button mat-button color="primary" (click)="select(item)">
+              Show price change
+            </button>
+          </mat-list-item>
+        </ng-container>
+        <ng-template #emptyState> Oops! There is no data! </ng-template>
+      </mat-list>
+    </mat-grid-tile>
+
+    <ng-template #loading>
+      <mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50"
+      >
+      </mat-progress-spinner>
+    </ng-template>
+
+    <mat-grid-tile>
+      <ng-container *ngIf="selectedCrypto$ | async as item">
+        {{ item.priceChange }}</ng-container
+      >
+    </mat-grid-tile>
+    <mat-grid-tile> </mat-grid-tile
+  ></mat-grid-list>
+</div>
