@@ -20,6 +20,7 @@ import { SortAndFilterEmployeeComponent } from './components/sort-and-filter-emp
 import { DetailsAndDeleteProductListComponent } from './components/details-and-delete-product-list/details-and-delete-product-list.component';
 import { EmptyStateAndSpinnerPublicHolidaysComponent } from './components/empty-state-and-spinner-public-holidays/empty-state-and-spinner-public-holidays.component';
 import { AutocompleteCryptoComponent } from './components/autocomplete-crypto/autocomplete-crypto.component';
+import { SearchProductEmptyStateComponent } from './components/search-product-empty-state/search-product-empty-state.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -40,6 +41,7 @@ import { SortAndFilterEmployeeComponentModule } from './components/sort-and-filt
 import { DetailsAndDeleteProductListComponentModule } from './components/details-and-delete-product-list/details-and-delete-product-list.component-module';
 import { EmptyStateAndSpinnerPublicHolidaysComponentModule } from './components/empty-state-and-spinner-public-holidays/empty-state-and-spinner-public-holidays.component-module';
 import { AutocompleteCryptoComponentModule } from './components/autocomplete-crypto/autocomplete-crypto.component-module';
+import { SearchProductEmptyStateComponentModule } from './components/search-product-empty-state/search-product-empty-state.component-module';
 
 @NgModule({
   imports: [
@@ -63,7 +65,8 @@ import { AutocompleteCryptoComponentModule } from './components/autocomplete-cry
       { path: 'sort-and-filter-employee', component: SortAndFilterEmployeeComponent },
       { path: 'details-and-delete-product-list', component: DetailsAndDeleteProductListComponent },
       { path: 'empty-state-and-spinner-public-holidays', component: EmptyStateAndSpinnerPublicHolidaysComponent },
-      { path: 'autocomplete-crypto', component: AutocompleteCryptoComponent }
+      { path: 'autocomplete-crypto', component: AutocompleteCryptoComponent },
+      { path: 'search-product-empty-state', component: SearchProductEmptyStateComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -84,7 +87,8 @@ import { AutocompleteCryptoComponentModule } from './components/autocomplete-cry
     SortAndFilterEmployeeComponentModule,
     DetailsAndDeleteProductListComponentModule,
     EmptyStateAndSpinnerPublicHolidaysComponentModule,
-    AutocompleteCryptoComponentModule
+    AutocompleteCryptoComponentModule,
+    SearchProductEmptyStateComponentModule
   ],
   exports: [RouterModule],
 })
