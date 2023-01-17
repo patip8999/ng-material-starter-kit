@@ -11,4 +11,8 @@ export class UniversitiesService {
   getAll(): Observable<UniveristyModel[]> {
     return this._httpClient.get<UniveristyModel[]>('http://universities.hipolabs.com/search?country=Poland');
   }
+
+  getAllByCountry(country: string): Observable<UniveristyModel[]> {
+    return this._httpClient.get<UniveristyModel[]>(`http://universities.hipolabs.com/search?country=${country}`);
+  }
 }
