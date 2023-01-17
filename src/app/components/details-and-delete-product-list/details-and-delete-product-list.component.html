@@ -1,0 +1,31 @@
+
+<!-- product list with delete and details -->
+
+<h1>Product List</h1>
+<mat-grid-list cols="2" rowHeight="1:1" xmlns="http://www.w3.org/1999/html">
+  <mat-grid-tile>
+    <mat-list role="list" *ngIf="refreshedList$ | async as refreshedList; else loading">
+      <ng-container *ngIf="refreshedList.length > 0; else emptyState">
+        <mat-list-item role="listitem" *ngFor="let item of refreshedList">{{item.title}}
+          <button mat-mini-fab>
+            <mat-icon (click)="delete(item.id)"> delete</mat-icon>
+          </button>
+          <button mat-button color="primary" (click)="selectProduct(item.id)">Show details</button>
+        </mat-list-item>
+      </ng-container>
+      <ng-template #emptyState>
+        Oops! There is no data!
+      </ng-template>
+    </mat-list>
+    <ng-template #loading>
+      <mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-spinner>
+    </ng-template>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <ng-container *ngIf="details$ | async as item">{{ item.title }} {{item.price}}</ng-container>
+  </mat-grid-tile>
+</mat-grid-list>

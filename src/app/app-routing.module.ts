@@ -17,6 +17,7 @@ import { RouteFilterMultiCardsFrondendComponent } from './components/route-filte
 import { RoutePaginationFrondendCityWorksComponent } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component';
 import { CryptoMasterDetailsComponent } from './components/crypto-master-details/crypto-master-details.component';
 import { SortAndFilterEmployeeComponent } from './components/sort-and-filter-employee/sort-and-filter-employee.component';
+import { DetailsAndDeleteProductListComponent } from './components/details-and-delete-product-list/details-and-delete-product-list.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -34,6 +35,7 @@ import { RouteFilterMultiCardsFrondendComponentModule } from './components/route
 import { RoutePaginationFrondendCityWorksComponentModule } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component-module';
 import { CryptoMasterDetailsComponentModule } from './components/crypto-master-details/crypto-master-details.component-module';
 import { SortAndFilterEmployeeComponentModule } from './components/sort-and-filter-employee/sort-and-filter-employee.component-module';
+import { DetailsAndDeleteProductListComponentModule } from './components/details-and-delete-product-list/details-and-delete-product-list.component-module';
 
 @NgModule({
   imports: [
@@ -54,7 +56,8 @@ import { SortAndFilterEmployeeComponentModule } from './components/sort-and-filt
       { path: 'list-2-route-filter-multi-cars-frondend', component: RouteFilterMultiCardsFrondendComponent },
       { path: 'route-pagination-frondend-city-works', component: RoutePaginationFrondendCityWorksComponent },
       { path: 'crypto-master-details', component: CryptoMasterDetailsComponent },
-      { path: 'sort-and-filter-employee', component: SortAndFilterEmployeeComponent }
+      { path: 'sort-and-filter-employee', component: SortAndFilterEmployeeComponent },
+      { path: 'details-and-delete-product-list', component: DetailsAndDeleteProductListComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -72,7 +75,8 @@ import { SortAndFilterEmployeeComponentModule } from './components/sort-and-filt
     RouteFilterMultiCardsFrondendComponentModule,
     RoutePaginationFrondendCityWorksComponentModule,
     CryptoMasterDetailsComponentModule,
-    SortAndFilterEmployeeComponentModule
+    SortAndFilterEmployeeComponentModule,
+    DetailsAndDeleteProductListComponentModule
   ],
   exports: [RouterModule],
 })

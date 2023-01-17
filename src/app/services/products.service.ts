@@ -23,4 +23,17 @@ getAllCategories(): Observable<string[]> {
 getAllInCategory(category: string): Observable<ProductModel[]> {
   return this._httpClient.get<ProductModel[]>('https://fakestoreapi.com/products/category/' + category);
 }
+
+
+getAll(): Observable<ProductModel[]> {
+  return this._httpClient.get<ProductModel[]>('https://fakestoreapi.com/products');
+}
+
+delete(id: string): Observable<ProductModel> {
+  return this._httpClient.delete<ProductModel>('https://fakestoreapi.com/products/' + id);
+}
+
+getOne(id: string): Observable<ProductModel> {
+  return this._httpClient.get<ProductModel>(`https://fakestoreapi.com/products/${id}`);
+}
 }
