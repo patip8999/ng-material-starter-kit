@@ -16,6 +16,7 @@ import { RouteFilterSingleProductsBackendComponent } from './components/route-fi
 import { RouteFilterMultiCardsFrondendComponent } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component';
 import { RoutePaginationFrondendCityWorksComponent } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component';
 import { CryptoMasterDetailsComponent } from './components/crypto-master-details/crypto-master-details.component';
+import { SortAndFilterEmployeeComponent } from './components/sort-and-filter-employee/sort-and-filter-employee.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -32,6 +33,7 @@ import { RouteFilterSingleProductsBackendComponentModule } from './components/ro
 import { RouteFilterMultiCardsFrondendComponentModule } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component-module';
 import { RoutePaginationFrondendCityWorksComponentModule } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component-module';
 import { CryptoMasterDetailsComponentModule } from './components/crypto-master-details/crypto-master-details.component-module';
+import { SortAndFilterEmployeeComponentModule } from './components/sort-and-filter-employee/sort-and-filter-employee.component-module';
 
 @NgModule({
   imports: [
@@ -51,7 +53,8 @@ import { CryptoMasterDetailsComponentModule } from './components/crypto-master-d
       { path: 'products/:category', component: RouteFilterSingleProductsBackendComponent },
       { path: 'list-2-route-filter-multi-cars-frondend', component: RouteFilterMultiCardsFrondendComponent },
       { path: 'route-pagination-frondend-city-works', component: RoutePaginationFrondendCityWorksComponent },
-      { path: 'crypto-master-details', component: CryptoMasterDetailsComponent }
+      { path: 'crypto-master-details', component: CryptoMasterDetailsComponent },
+      { path: 'sort-and-filter-employee', component: SortAndFilterEmployeeComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -68,7 +71,8 @@ import { CryptoMasterDetailsComponentModule } from './components/crypto-master-d
     RouteFilterSingleProductsBackendComponentModule,
     RouteFilterMultiCardsFrondendComponentModule,
     RoutePaginationFrondendCityWorksComponentModule,
-    CryptoMasterDetailsComponentModule
+    CryptoMasterDetailsComponentModule,
+    SortAndFilterEmployeeComponentModule
   ],
   exports: [RouterModule],
 })

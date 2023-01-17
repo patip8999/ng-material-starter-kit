@@ -1,0 +1,68 @@
+<mat-card>
+    <mat-card-title>Sort and filter</mat-card-title>
+    <mat-card-content>
+  
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Choose an option</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let item of order | async" [value]="item" (click)="sort(item)">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Choose an option</mat-label>
+        <mat-select>
+          <mat-option value="all" (click)="filter(101,101)">
+            All
+          </mat-option>
+          <mat-option value="0-20" (click)="filter(0,20)">
+            0-20
+          </mat-option>
+          <mat-option value="21-30" (click)="filter(21,30)">
+            21-30
+          </mat-option>
+          <mat-option value="31-40" (click)="filter(31,40)">
+            31-40
+          </mat-option>
+          <mat-option value="41-50" (click)="filter(41,50)">
+            41-50
+          </mat-option>
+          <mat-option value="51-100" (click)="filter(51,100)">
+            51-100
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+  
+    </mat-card-content>
+  </mat-card>
+  
+  
+  <mat-card>
+    <mat-card-title>Employee</mat-card-title>
+    <mat-card-content>
+    </mat-card-content>
+  </mat-card>
+  
+  
+  <mat-grid-list cols="2" rowHeight="1:1">
+    <mat-list>
+      <mat-list role="list">
+        <mat-list-item role="listitem"
+                       *ngFor="let item of employees$ | async">{{item.employee_name}} {{item.employee_salary}}
+          <button mat-mini-fab>
+            <mat-icon (click)="delete(item.id)"> delete</mat-icon>
+          </button>
+          <button mat-button color="primary" (click)="select(item.id)">Show details</button>
+        </mat-list-item>
+      </mat-list>
+      <mat-grid-tile>
+        <ng-container *ngIf="details$ | async as item">{{ item.employee_name }} {{item.employee_salary}}</ng-container>
+      </mat-grid-tile>
+    </mat-list>
+  
+  </mat-grid-list>
+  
