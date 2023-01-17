@@ -14,6 +14,7 @@ import { RouteSortSingleProductsBackendComponent } from './components/route-sort
 import { SearchRouteMultiJobsComponent } from './components/search-route-multi-jobs/search-route-multi-jobs.component';
 import { RouteFilterSingleProductsBackendComponent } from './components/route-filter-single-products-backend/route-filter-single-products-backend.component';
 import { RouteFilterMultiCardsFrondendComponent } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component';
+import { RoutePaginationFrondendCityWorksComponent } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -28,6 +29,7 @@ import { RouteSortSingleProductsBackendComponentModule } from './components/rout
 import { SearchRouteMultiJobsComponentModule } from './components/search-route-multi-jobs/search-route-multi-jobs.component-module';
 import { RouteFilterSingleProductsBackendComponentModule } from './components/route-filter-single-products-backend/route-filter-single-products-backend.component-module';
 import { RouteFilterMultiCardsFrondendComponentModule } from './components/route-filter-multi-cards-frondend/route-filter-multi-cards-frondend.component-module';
+import { RoutePaginationFrondendCityWorksComponentModule } from './components/route-pagination-frondend-city-works/route-pagination-frondend-city-works.component-module';
 
 @NgModule({
   imports: [
@@ -45,7 +47,8 @@ import { RouteFilterMultiCardsFrondendComponentModule } from './components/route
       { path: 'route-sort-single-products-backend', component: RouteSortSingleProductsBackendComponent },
       { path: 'search-route-multi-jobs', component: SearchRouteMultiJobsComponent },
       { path: 'products/:category', component: RouteFilterSingleProductsBackendComponent },
-      { path: 'list-2-route-filter-multi-cars-frondend', component: RouteFilterMultiCardsFrondendComponent }
+      { path: 'list-2-route-filter-multi-cars-frondend', component: RouteFilterMultiCardsFrondendComponent },
+      { path: 'route-pagination-frondend-city-works', component: RoutePaginationFrondendCityWorksComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -60,7 +63,8 @@ import { RouteFilterMultiCardsFrondendComponentModule } from './components/route
     RouteSortSingleProductsBackendComponentModule,
     SearchRouteMultiJobsComponentModule,
     RouteFilterSingleProductsBackendComponentModule,
-    RouteFilterMultiCardsFrondendComponentModule
+    RouteFilterMultiCardsFrondendComponentModule,
+    RoutePaginationFrondendCityWorksComponentModule
   ],
   exports: [RouterModule],
 })
