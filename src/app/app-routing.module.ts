@@ -24,6 +24,7 @@ import { SearchProductEmptyStateComponent } from './components/search-product-em
 import { SearchUniversityByCountryComponent } from './components/search-university-by-country/search-university-by-country.component';
 import { QueryArraySingleJobComponent } from './components/query-array-single-job/query-array-single-job.component';
 import { QueryStringSingleUserComponent } from './components/query-string-single-user/query-string-single-user.component';
+import { QueryStringMultiUserComponent } from './components/query-string-multi-user/query-string-multi-user.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -48,6 +49,7 @@ import { SearchProductEmptyStateComponentModule } from './components/search-prod
 import { SearchUniversityByCountryComponentModule } from './components/search-university-by-country/search-university-by-country.component-module';
 import { QueryArraySingleJobComponentModule } from './components/query-array-single-job/query-array-single-job.component-module';
 import { QueryStringSingleUserComponentModule } from './components/query-string-single-user/query-string-single-user.component-module';
+import { QueryStringMultiUserComponentModule } from './components/query-string-multi-user/query-string-multi-user.component-module';
 
 @NgModule({
   imports: [
@@ -75,7 +77,8 @@ import { QueryStringSingleUserComponentModule } from './components/query-string-
       { path: 'search-product-empty-state', component: SearchProductEmptyStateComponent },
       { path: 'search-university-by-country', component: SearchUniversityByCountryComponent },
       { path: 'query-array-single-job', component: QueryArraySingleJobComponent },
-      { path: 'query-string-single-user', component: QueryStringSingleUserComponent }
+      { path: 'query-string-single-user', component: QueryStringSingleUserComponent },
+      { path: 'query-string-multi-user', component: QueryStringMultiUserComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -100,7 +103,8 @@ import { QueryStringSingleUserComponentModule } from './components/query-string-
     SearchProductEmptyStateComponentModule,
     SearchUniversityByCountryComponentModule,
     QueryArraySingleJobComponentModule,
-    QueryStringSingleUserComponentModule
+    QueryStringSingleUserComponentModule,
+    QueryStringMultiUserComponentModule
   ],
   exports: [RouterModule],
 })

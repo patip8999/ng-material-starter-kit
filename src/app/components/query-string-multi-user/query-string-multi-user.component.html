@@ -1,0 +1,9 @@
+<mat-card
+  ><mat-card-title></mat-card-title>
+  <mat-card-content><mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let item of userMultiList$ | async">
+  <h1>{{item.email}}</h1> 
+  Role is :{{item.role}} and works in: {{item.department}}
+</mat-grid-tile>
+</mat-grid-list></mat-card-content
+></mat-card>
