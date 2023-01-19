@@ -22,6 +22,7 @@ import { EmptyStateAndSpinnerPublicHolidaysComponent } from './components/empty-
 import { AutocompleteCryptoComponent } from './components/autocomplete-crypto/autocomplete-crypto.component';
 import { SearchProductEmptyStateComponent } from './components/search-product-empty-state/search-product-empty-state.component';
 import { SearchUniversityByCountryComponent } from './components/search-university-by-country/search-university-by-country.component';
+import { QueryArraySingleJobComponent } from './components/query-array-single-job/query-array-single-job.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -44,6 +45,7 @@ import { EmptyStateAndSpinnerPublicHolidaysComponentModule } from './components/
 import { AutocompleteCryptoComponentModule } from './components/autocomplete-crypto/autocomplete-crypto.component-module';
 import { SearchProductEmptyStateComponentModule } from './components/search-product-empty-state/search-product-empty-state.component-module';
 import { SearchUniversityByCountryComponentModule } from './components/search-university-by-country/search-university-by-country.component-module';
+import { QueryArraySingleJobComponentModule } from './components/query-array-single-job/query-array-single-job.component-module';
 
 @NgModule({
   imports: [
@@ -69,7 +71,8 @@ import { SearchUniversityByCountryComponentModule } from './components/search-un
       { path: 'empty-state-and-spinner-public-holidays', component: EmptyStateAndSpinnerPublicHolidaysComponent },
       { path: 'autocomplete-crypto', component: AutocompleteCryptoComponent },
       { path: 'search-product-empty-state', component: SearchProductEmptyStateComponent },
-      { path: 'search-university-by-country', component: SearchUniversityByCountryComponent }
+      { path: 'search-university-by-country', component: SearchUniversityByCountryComponent },
+      { path: 'query-array-single-job', component: QueryArraySingleJobComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -92,7 +95,8 @@ import { SearchUniversityByCountryComponentModule } from './components/search-un
     EmptyStateAndSpinnerPublicHolidaysComponentModule,
     AutocompleteCryptoComponentModule,
     SearchProductEmptyStateComponentModule,
-    SearchUniversityByCountryComponentModule
+    SearchUniversityByCountryComponentModule,
+    QueryArraySingleJobComponentModule
   ],
   exports: [RouterModule],
 })
