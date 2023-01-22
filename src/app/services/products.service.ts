@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { concatMap, from, map, Observable } from 'rxjs';
+import { concatMap, forkJoin, from, map, Observable } from 'rxjs';
 import { ProductModel } from '../models/product.model';
 import { ProductsWithCategoriesQueryModel } from '../query-models/products-with-categories.query-model';
 import { ProductTwoModel } from '../models/product-two.model';
+import { ProductThreeModel } from '../models/product-three.model';
+import { StoreModel } from '../models/store.model';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
@@ -64,4 +66,19 @@ getProductsWithCategory(products: ProductTwoModel[]): Observable<ProductsWithCat
   )
 }
 
+getAllProductsThree(): Observable<ProductThreeModel[]> {
+  return this._httpClient.get<ProductThreeModel[]>('https://636ce2d8ab4814f2b2712854.mockapi.io/products');
+}
+
+getProductsWithStock(productIds: string[]): Observable<Record<string, StoreModel[]>> {
+  return forkJoin(
+      productIds.map((productId) => this._httpClient.get<StoreModel[]> (`https://636ce2d8ab4814f2b2712854.mockapi.io/products/${productId}/product-metadata`))).pipe(
+          map((productsStock: StoreModel[][]) => 
+          productsStock.reduce((a,c,idx) => ({...a,[productIds[idx]]:c}),
+          {} as Record<string, StoreModel[]>
+          )
+          )
+      )
+  
+}
 }
