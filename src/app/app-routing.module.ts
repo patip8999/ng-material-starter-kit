@@ -25,6 +25,7 @@ import { SearchUniversityByCountryComponent } from './components/search-universi
 import { QueryArraySingleJobComponent } from './components/query-array-single-job/query-array-single-job.component';
 import { QueryStringSingleUserComponent } from './components/query-string-single-user/query-string-single-user.component';
 import { QueryStringMultiUserComponent } from './components/query-string-multi-user/query-string-multi-user.component';
+import { QueryNestedSequentialListProductsWithCategoriesComponent } from './components/query-nested-sequential-list-products-with-categories/query-nested-sequential-list-products-with-categories.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -50,6 +51,7 @@ import { SearchUniversityByCountryComponentModule } from './components/search-un
 import { QueryArraySingleJobComponentModule } from './components/query-array-single-job/query-array-single-job.component-module';
 import { QueryStringSingleUserComponentModule } from './components/query-string-single-user/query-string-single-user.component-module';
 import { QueryStringMultiUserComponentModule } from './components/query-string-multi-user/query-string-multi-user.component-module';
+import { QueryNestedSequentialListProductsWithCategoriesComponentModule } from './components/query-nested-sequential-list-products-with-categories/query-nested-sequential-list-products-with-categories.component-module';
 
 @NgModule({
   imports: [
@@ -78,7 +80,8 @@ import { QueryStringMultiUserComponentModule } from './components/query-string-m
       { path: 'search-university-by-country', component: SearchUniversityByCountryComponent },
       { path: 'query-array-single-job', component: QueryArraySingleJobComponent },
       { path: 'query-string-single-user', component: QueryStringSingleUserComponent },
-      { path: 'query-string-multi-user', component: QueryStringMultiUserComponent }
+      { path: 'query-string-multi-user', component: QueryStringMultiUserComponent },
+      { path: 'query-nested-sequential-list-products-with-category', component: QueryNestedSequentialListProductsWithCategoriesComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -104,7 +107,8 @@ import { QueryStringMultiUserComponentModule } from './components/query-string-m
     SearchUniversityByCountryComponentModule,
     QueryArraySingleJobComponentModule,
     QueryStringSingleUserComponentModule,
-    QueryStringMultiUserComponentModule
+    QueryStringMultiUserComponentModule,
+    QueryNestedSequentialListProductsWithCategoriesComponentModule
   ],
   exports: [RouterModule],
 })
