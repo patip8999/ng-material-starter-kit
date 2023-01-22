@@ -1,0 +1,19 @@
+<ng-container *ngIf="names$ | async as names">
+  <mat-list role="list" *ngIf="names.value">
+    <mat-list-item role="listitem" *ngFor="let item of names.value">{{
+      item
+    }}</mat-list-item>
+  </mat-list>
+  <ng-container *ngIf="names.error">
+    <ng-template #emptyState> Oops something went wrong!</ng-template>
+  </ng-container>
+
+    <mat-progress-spinner *ngIf="names.isLoading"
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+      [value]="50"
+    >
+    </mat-progress-spinner>
+
+</ng-container>
+<button mat-raised-button color="primary" (click)="refreshData()">Try again</button>

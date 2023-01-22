@@ -28,6 +28,7 @@ import { QueryStringMultiUserComponent } from './components/query-string-multi-u
 import { QueryNestedSequentialListProductsWithCategoriesComponent } from './components/query-nested-sequential-list-products-with-categories/query-nested-sequential-list-products-with-categories.component';
 import { QueryMultiNestedAccordionOrganizationsComponent } from './components/query-multi-nested-accordion-organizations/query-multi-nested-accordion-organizations.component';
 import { QuerySingleNestedAccordionProductsWithStockComponent } from './components/query-single-nested-accordion-products-with-stock/query-single-nested-accordion-products-with-stock.component';
+import { QueryLoaderNamesComponent } from './components/query-loader-names/query-loader-names.component';
 import { FormAutocompleteMultiCarsComponentModule } from './components/form-autocomplete-multi-cars/form-autocomplete-multi-cars.component-module';
 import { CatsSearchAutocompleteComponentModule } from './components/cats-search-autocomplete/cats-search-autocomplete.component-module';
 import { RouteLimitSingleProductsComponentModule } from './components/route-limit-single-products/route-limit-single-products.component-module';
@@ -56,6 +57,7 @@ import { QueryStringMultiUserComponentModule } from './components/query-string-m
 import { QueryNestedSequentialListProductsWithCategoriesComponentModule } from './components/query-nested-sequential-list-products-with-categories/query-nested-sequential-list-products-with-categories.component-module';
 import { QueryMultiNestedAccordionOrganizationsComponentModule } from './components/query-multi-nested-accordion-organizations/query-multi-nested-accordion-organizations.component-module';
 import { QuerySingleNestedAccordionProductsWithStockComponentModule } from './components/query-single-nested-accordion-products-with-stock/query-single-nested-accordion-products-with-stock.component-module';
+import { QueryLoaderNamesComponentModule } from './components/query-loader-names/query-loader-names.component-module';
 
 @NgModule({
   imports: [
@@ -87,7 +89,8 @@ import { QuerySingleNestedAccordionProductsWithStockComponentModule } from './co
       { path: 'query-string-multi-user', component: QueryStringMultiUserComponent },
       { path: 'query-nested-sequential-list-products-with-category', component: QueryNestedSequentialListProductsWithCategoriesComponent },
       { path: 'query-multi-nested-accordion-organizations', component: QueryMultiNestedAccordionOrganizationsComponent },
-      { path: 'query-single-nested-accordion-products-with-stock', component: QuerySingleNestedAccordionProductsWithStockComponent }
+      { path: 'query-single-nested-accordion-products-with-stock', component: QuerySingleNestedAccordionProductsWithStockComponent },
+      { path: 'query-loader-names', component: QueryLoaderNamesComponent }
     ]),
     FormAutocompleteMultiCarsComponentModule,
     CatsSearchAutocompleteComponentModule,
@@ -116,7 +119,8 @@ import { QuerySingleNestedAccordionProductsWithStockComponentModule } from './co
     QueryStringMultiUserComponentModule,
     QueryNestedSequentialListProductsWithCategoriesComponentModule,
     QueryMultiNestedAccordionOrganizationsComponentModule,
-    QuerySingleNestedAccordionProductsWithStockComponentModule
+    QuerySingleNestedAccordionProductsWithStockComponentModule,
+    QueryLoaderNamesComponentModule
   ],
   exports: [RouterModule],
 })
