@@ -29,7 +29,8 @@ export class RouteFilterMultiCardsFrondendComponent {
         )
       };
     }),
-    shareReplay(1)
+    shareReplay(1),
+    tap(console.log), 
   );
   readonly carList$: Observable<CarModel[]> = combineLatest([
     this._carsService.getAllCar(),
@@ -42,8 +43,7 @@ export class RouteFilterMultiCardsFrondendComponent {
           (car) =>
             features.comfortFeatures.size === 0 ||
             car.comfortFeaturesIds?.find((cfIds) => features.comfortFeatures.has(cfIds))
-        ),
-       
+        )
     )
   );
   constructor(private _carsService: CarsService, private _activatedRoute: ActivatedRoute, private _router: Router) {}
@@ -52,8 +52,8 @@ export class RouteFilterMultiCardsFrondendComponent {
     this.queryParamsFilter$
       .pipe(
         take(1),
-        tap((console.log),
-    
+      
+        tap(
           (data) => {
           const brParamsSet = data.brands;
           event === true ? brParamsSet.add(carBrand.id) : brParamsSet.delete(carBrand.id);
@@ -66,16 +66,19 @@ export class RouteFilterMultiCardsFrondendComponent {
     this.queryParamsFilter$
       .pipe(
         take(1),
+    
         tap((data) => {
           const cfParamsSet = data.comfortFeatures;
           event === true ? cfParamsSet.add(comfFeature.id) : cfParamsSet.delete(comfFeature.id);
           this._router.navigate([], { queryParams: this.mergeQueryParams(data.brands, cfParamsSet) });
         })
       )
+      
       .subscribe();
   }
 
   private mergeQueryParams(brands: Set<string>, comfFeat: Set<string>): Record<string, string> {
+    
     const params = {} as Record<string, string>;
     if (brands.size > 0) {
       params['brands'] = [...brands].sort().join();
@@ -86,4 +89,3 @@ export class RouteFilterMultiCardsFrondendComponent {
     return params;
   }
 }
-
