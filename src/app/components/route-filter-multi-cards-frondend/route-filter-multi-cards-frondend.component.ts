@@ -41,8 +41,9 @@ export class RouteFilterMultiCardsFrondendComponent {
         .filter(
           (car) =>
             features.comfortFeatures.size === 0 ||
-            car.comfortFeaturesIds.find((cfIds) => features.comfortFeatures.has(cfIds))
-        )
+            car.comfortFeaturesIds?.find((cfIds) => features.comfortFeatures.has(cfIds))
+        ),
+       
     )
   );
   constructor(private _carsService: CarsService, private _activatedRoute: ActivatedRoute, private _router: Router) {}
@@ -51,7 +52,9 @@ export class RouteFilterMultiCardsFrondendComponent {
     this.queryParamsFilter$
       .pipe(
         take(1),
-        tap((data) => {
+        tap((console.log),
+    
+          (data) => {
           const brParamsSet = data.brands;
           event === true ? brParamsSet.add(carBrand.id) : brParamsSet.delete(carBrand.id);
           this._router.navigate([], { queryParams: this.mergeQueryParams(brParamsSet, data.comfortFeatures) });
