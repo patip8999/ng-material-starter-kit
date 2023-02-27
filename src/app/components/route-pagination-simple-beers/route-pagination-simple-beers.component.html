@@ -4,10 +4,25 @@
     ><mat-list-item role="listitem" *ngFor="let item of beers$ | async">{{
       item.name
     }}</mat-list-item></mat-list
-  ><mat-card-content></mat-card-content
->
+  ><mat-card-content></mat-card-content>
 
-<ng-container *ngIf="paginationState$ | async as paginationState  ">
-<button mat-raised-button (click)="onPrevClicked()" [disabled]="paginationState.isFirst"><</button>
-<button mat-raised-button (click)="onNextClicked()" [disabled]="paginationState.isLast">></button></ng-container>
+  <ng-container *ngIf="paginationState$ | async as paginationState">
+
+
+    <button
+    mat-raised-button color="accent"
+      (click)="onPrevClicked()"
+      [disabled]="paginationState.isFirst"
+    >
+      <
+    </button>
+    <button
+    mat-raised-button color="accent"
+      (click)="onNextClicked()"
+      [disabled]="paginationState.isLast"
+    >
+      >
+    </button></ng-container
+  >
+ 
 </mat-card>

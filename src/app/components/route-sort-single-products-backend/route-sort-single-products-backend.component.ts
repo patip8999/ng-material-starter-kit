@@ -16,7 +16,7 @@ export class RouteSortSingleProductsBackendComponent {
   readonly sort$: Observable<string[]> = of(['asc', 'desc']);
   readonly productList$: Observable<ProductModel[]> = this._activatedRoute.queryParams.pipe(
     map((data) => data['sort']),
-    switchMap((data) => this._productsService.getAllSorted(data))
+    switchMap((data) => this._productsService.getAllSorted(data ['sort'] ?? 'asc'))
   );
 
   constructor(private _activatedRoute: ActivatedRoute, private _productsService: ProductsService) {
